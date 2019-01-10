@@ -1,25 +1,22 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Header from '../src/Components/Header'
+import Newlist from './Components/Newlist'
+import JSON from './db.json'
 import './App.css';
 
 class App extends Component {
+
+  state = {
+    news: JSON
+  }
   render() {
+    console.log(this.state.new)
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+          <Header />
+          <Newlist news={this.state.news} donkey="Me">
+            Hello Buddy
+          </Newlist>
       </div>
     );
   }
