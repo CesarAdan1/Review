@@ -4,8 +4,8 @@ import Newlist from './Components/Newlist'
 import JSON from './db.json'
 import './App.css';
 
-class App extends Component {
 
+class App extends Component {
   state = {
     news: JSON
   }
@@ -14,7 +14,9 @@ class App extends Component {
     return (
       <div className="App">
           <Header />
-          <Newlist news={this.state.news} donkey="Me">
+          <Newlist 
+          news={this.state.news} 
+          donkey="Me">
             Hello Buddy
           </Newlist>
       </div>
