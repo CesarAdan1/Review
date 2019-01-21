@@ -33,9 +33,8 @@ class Header extends Component {
   render() { 
       //styles
       
-    
     return (   
-        <header className={{background: `${this.state.active ? 'red':'blue'}`}}>
+        <header>
           <div 
           className="logo"
           >
