@@ -1,5 +1,6 @@
 import React from 'react'
 
+//instead of bringing props use {item}
 const NewsItem = ({item}) => {
     return(
         <div>

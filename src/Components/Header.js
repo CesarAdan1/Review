@@ -4,33 +4,17 @@ import './header.scss'
 
 //ES6
 
-class React{
-    constructor() {
-        this.props = {
-           //props bring whatever 
-        }
-    }
-}
-
 //inherit class Car
-
-class Page extends Car {
-    //constructor
-    constructor(){
-        super()
-        this.windows = 4;
-    }
-}
-
-const car = new Car();
-const ford = new Ford();
 
 //functional component + state {highly recommend}
 class Header extends Component {   
-    state = {
-        title: "The Keywords are:",
-        keyWords: ""
-    }
+   constructor(props){
+       super(props)
+
+       this.state = {
+           keywords:'Hello'
+       }
+   }
 //Synthetic Event
     /*inputChangeHandler = (e) => {
         //console.log(e.target.value)
@@ -38,14 +22,20 @@ class Header extends Component {
             keyWords: e.target.value
         })
     }*/
-    inputChangeHandler(e){
-        console.log(e.target.value)
+    inputChangeHandler=(e)=>{
+        const style = e.target.value === '' ? 'active' : 'non-active';
+        this.setState({
+            active: 'active',
+            keywords: e.target.value
+        })
     }
 
-  render() {     
-    console.log(this.state.keyWords) 
+  render() { 
+      //styles
+      
+    
     return (   
-        <header>
+        <header className={{background: `${this.state.active ? 'red':'blue'}`}}>
           <div 
           className="logo"
           >
@@ -53,12 +43,9 @@ class Header extends Component {
           </div>
             <input 
               type="text" 
-              onChange={(e)=>this.inputChangeHandler(e)}
+              onChange={(e)=>this.inputChangeHandler}
             //onChange={this.inputChangeHandler()}
             />
-          <div>
-            {this.state.title}
-          </div>
         </header>
     )
   }

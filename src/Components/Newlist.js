@@ -3,12 +3,13 @@ import NewsItem from './NewlistItems'
 
 const Newlist = (props) => {
     //console.log(props.donkey)
-
+        //Reference to NewsItem
     const items = props.news.map((item)=>{
-        return(
-            
-           <NewsItem key={item.id} item={item}/>
-           
+        return(    
+           <NewsItem 
+                key={item.id} 
+                item={item}                  
+            />         
         )
     })
     //pass props to their children

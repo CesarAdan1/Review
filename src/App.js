@@ -9,12 +9,14 @@ class App extends Component {
   state = {
     news: JSON
   }
+
   render() {
     console.log(this.state.new)
     return (
       <div className="App">
           <Header />
-          <Newlist 
+          <Newlist
+          //
           news={this.state.news} 
           donkey="Me">
             Hello Buddy
