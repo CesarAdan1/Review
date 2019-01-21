@@ -2,6 +2,29 @@ import React, { Component } from 'react'
 import './header.scss'
 
 
+//ES6
+
+class React{
+    constructor() {
+        this.props = {
+           //props bring whatever 
+        }
+    }
+}
+
+//inherit class Car
+
+class Page extends Car {
+    //constructor
+    constructor(){
+        super()
+        this.windows = 4;
+    }
+}
+
+const car = new Car();
+const ford = new Ford();
+
 //functional component + state {highly recommend}
 class Header extends Component {   
     state = {
@@ -30,7 +53,7 @@ class Header extends Component {
           </div>
             <input 
               type="text" 
-              onChange={this.inputChangeHandler}
+              onChange={(e)=>this.inputChangeHandler(e)}
             //onChange={this.inputChangeHandler()}
             />
           <div>
